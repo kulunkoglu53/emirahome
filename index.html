@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EMIRA HOME</title>
+  <style>
+    :root {
+      --page-bg:#efe8df;
+      --panel-bg:#f4eee7;
+      --radius:30px;
+      --shadow:0 18px 50px rgba(0,0,0,.10);
+      --hero-ratio:1.50000000;
+      --page-pad:24px;
+    }
+
+    * { box-sizing:border-box; }
+
+    html, body {
+      margin:0;
+      width:100%;
+      min-height:100%;
+      background:var(--page-bg);
+      font-family:Georgia, "Times New Roman", serif;
+    }
+
+    body { overflow-x:hidden; }
+
+    .hero-wrap {
+      min-height:100svh;
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:var(--page-pad);
+      background:
+        radial-gradient(circle at top, rgba(255,255,255,.34), transparent 45%),
+        linear-gradient(180deg, #f3eee7 0%, #eee6dc 100%);
+    }
+
+    /* Resim oranını bozmaz; hem genişlik hem yükseklik sınırına göre kendini hesaplar */
+    .hero-card {
+      width:min(
+        calc((100svh - (var(--page-pad) * 2)) * var(--hero-ratio)),
+        calc(100vw - (var(--page-pad) * 2)),
+        1700px
+      );
+      width:min(
+        calc((100vh - (var(--page-pad) * 2)) * var(--hero-ratio)),
+        calc(100vw - (var(--page-pad) * 2)),
+        1700px
+      );
+      aspect-ratio:1536 / 1024;
+      background:var(--panel-bg);
+      border-radius:var(--radius);
+      overflow:hidden;
+      box-shadow:var(--shadow);
+      flex:0 0 auto;
+    }
+
+    .hero-card img {
+      width:100%;
+      height:100%;
+      display:block;
+      object-fit:contain;
+      object-position:center center;
+      background:var(--panel-bg);
+    }
+
+    /* Tablet */
+    @media (max-width: 991px) {
+      :root {
+        --page-pad:16px;
+        --radius:22px;
+      }
+
+      .hero-wrap {
+        align-items:flex-start;
+      }
+
+      .hero-card {
+        width:min(
+          calc((100svh - (var(--page-pad) * 2)) * var(--hero-ratio)),
+          calc(100vw - (var(--page-pad) * 2))
+        );
+        width:min(
+          calc((100vh - (var(--page-pad) * 2)) * var(--hero-ratio)),
+          calc(100vw - (var(--page-pad) * 2))
+        );
+      }
+    }
+
+    /* Mobile */
+    @media (max-width: 767px) {
+      :root {
+        --page-pad:10px;
+        --radius:16px;
+      }
+
+      .hero-wrap {
+        align-items:flex-start;
+      }
+
+      .hero-card {
+        width:calc(100vw - (var(--page-pad) * 2));
+        aspect-ratio:1536 / 1024;
+      }
+
+      .hero-card img {
+        width:100%;
+        height:100%;
+        object-fit:contain;
+        object-position:center top;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="hero-wrap">
+    <section class="hero-card" aria-label="EMIRA HOME ana sayfa görseli">
+      <img src="assets/emirahome-hero.png" alt="EMIRA HOME ana sayfa banner görseli" />
+    </section>
+  </main>
+</body>
+</html>
