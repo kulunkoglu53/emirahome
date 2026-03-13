@@ -1,9 +1,13 @@
-EMIRA HOME Responsive Hero Package v5
+EMIRA HOME Responsive Hero v8
 
-Bu sürümde revize edilenler:
-- Görsel rounded frame içinde oranı bozulmadan durur.
-- Ekran boyutu değiştikçe çerçeve, görselin oranına göre yeniden hesaplanır.
-- Desktop / tablet / mobil için güvenli yerleşim kullanılır.
-- Stretch, crop ve kötü hizalanma azaltıldı.
+Bu sürümde:
+- SEO meta title, description, keywords ve Open Graph alanları eklendi
+- Ev dekorasyon ve ev güzelleştirme odaklı içerik yerleştirildi
+- Görsel artık çerçeve içinde width:auto mantığıyla bozulmadan oturur
+- Tüm cihazlarda responsive çalışır
+- Hover zoom + yumuşak ışıldama korunur
+- Mouse sparkle yoktur
 
-Görsel oranı: 1536 x 1024
+Dosyalar:
+- index.html
+- assets/emirahome-hero.png

@@ -3,114 +3,149 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>EMIRA HOME</title>
+
+  <title>EMIRA HOME | Ev Dekorasyon ve Ev Güzelleştirme</title>
+  <meta name="description" content="EMIRA HOME ile ev dekorasyon, ev güzelleştirme, zarif yaşam alanları, dekoratif objeler ve zamansız ev aksesuarları dünyasını keşfedin." />
+  <meta name="keywords" content="ev dekorasyon, ev güzelleştirme, home decor, dekoratif obje, yaşam alanı, salon dekorasyonu, modern ev dekorasyonu, zamansız tasarım, ev aksesuarları, EMIRA HOME" />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="EMIRA HOME" />
+  <meta name="theme-color" content="#efe8df" />
+  <link rel="canonical" href="https://emirahome.com/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="EMIRA HOME | Ev Dekorasyon ve Ev Güzelleştirme" />
+  <meta property="og:description" content="Ev dekorasyon ve ev güzelleştirme için zarif, seçili ve zamansız dokunuşlar." />
+  <meta property="og:url" content="https://emirahome.com/" />
+  <meta property="og:image" content="assets/emirahome-hero.png" />
+  <meta property="og:locale" content="tr_TR" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="EMIRA HOME | Ev Dekorasyon ve Ev Güzelleştirme" />
+  <meta name="twitter:description" content="Ev dekorasyon ve ev güzelleştirme için zarif, seçili ve zamansız dokunuşlar." />
+  <meta name="twitter:image" content="assets/emirahome-hero.png" />
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"EMIRA HOME",
+    "url":"https://emirahome.com/",
+    "logo":"https://emirahome.com/assets/emirahome-hero.png",
+    "description":"Ev dekorasyon ve ev güzelleştirme alanında zarif, seçili ve zamansız ürünler sunan marka."
+  }
+  </script>
+
   <style>
-    :root {
+    :root{
       --page-bg:#efe8df;
       --panel-bg:#f4eee7;
       --radius:30px;
       --shadow:0 18px 50px rgba(0,0,0,.10);
-      --hero-ratio:1.50000000;
-      --page-pad:24px;
+      --pad:24px;
+      --hero-max:1720px;
     }
 
-    * { box-sizing:border-box; }
+    *{box-sizing:border-box}
 
-    html, body {
+    html,body{
       margin:0;
       width:100%;
       min-height:100%;
       background:var(--page-bg);
-      font-family:Georgia, "Times New Roman", serif;
+      font-family:Georgia,"Times New Roman",serif;
+      overflow-x:hidden;
     }
 
-    body { overflow-x:hidden; }
+    body{
+      background:
+        radial-gradient(circle at top, rgba(255,255,255,.35), transparent 42%),
+        linear-gradient(180deg,#f3eee7 0%,#eee6dc 100%);
+    }
 
-    .hero-wrap {
+    .hero-wrap{
       min-height:100svh;
       min-height:100vh;
       display:flex;
       align-items:center;
       justify-content:center;
-      padding:var(--page-pad);
-      background:
-        radial-gradient(circle at top, rgba(255,255,255,.34), transparent 45%),
-        linear-gradient(180deg, #f3eee7 0%, #eee6dc 100%);
+      padding:var(--pad);
     }
 
-    /* Resim oranını bozmaz; hem genişlik hem yükseklik sınırına göre kendini hesaplar */
-    .hero-card {
-      width:min(
-        calc((100svh - (var(--page-pad) * 2)) * var(--hero-ratio)),
-        calc(100vw - (var(--page-pad) * 2)),
-        1700px
-      );
-      width:min(
-        calc((100vh - (var(--page-pad) * 2)) * var(--hero-ratio)),
-        calc(100vw - (var(--page-pad) * 2)),
-        1700px
-      );
-      aspect-ratio:1536 / 1024;
+    .hero-card{
+      width:min(calc(100vw - (var(--pad) * 2)), var(--hero-max));
       background:var(--panel-bg);
       border-radius:var(--radius);
       overflow:hidden;
       box-shadow:var(--shadow);
-      flex:0 0 auto;
+      position:relative;
+      line-height:0;
     }
 
-    .hero-card img {
-      width:100%;
-      height:100%;
+    .hero-card img{
       display:block;
+      width:100%;
+      height:auto;
+      max-width:100%;
       object-fit:contain;
-      object-position:center center;
-      background:var(--panel-bg);
+      transition:transform .8s ease, filter .8s ease;
+      position:relative;
+      z-index:1;
     }
 
-    /* Tablet */
-    @media (max-width: 991px) {
-      :root {
-        --page-pad:16px;
+    .hero-card:hover img{
+      transform:scale(1.02);
+      filter:brightness(1.04) saturate(1.03);
+    }
+
+    .hero-card::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        radial-gradient(circle at 28% 22%, rgba(255,255,255,.14), transparent 24%),
+        radial-gradient(circle at 72% 38%, rgba(255,230,180,.10), transparent 22%),
+        linear-gradient(115deg, transparent 30%, rgba(255,255,255,.12) 48%, transparent 66%);
+      opacity:0;
+      transform:translateX(-6%);
+      transition:opacity .8s ease, transform .8s ease;
+      pointer-events:none;
+      z-index:2;
+      mix-blend-mode:screen;
+    }
+
+    .hero-card:hover::after{
+      opacity:1;
+      transform:translateX(0);
+    }
+
+    @media (max-width: 991px){
+      :root{
+        --pad:16px;
         --radius:22px;
       }
-
-      .hero-wrap {
+      .hero-wrap{
         align-items:flex-start;
       }
-
-      .hero-card {
-        width:min(
-          calc((100svh - (var(--page-pad) * 2)) * var(--hero-ratio)),
-          calc(100vw - (var(--page-pad) * 2))
-        );
-        width:min(
-          calc((100vh - (var(--page-pad) * 2)) * var(--hero-ratio)),
-          calc(100vw - (var(--page-pad) * 2))
-        );
+      .hero-card{
+        width:calc(100vw - (var(--pad) * 2));
       }
     }
 
-    /* Mobile */
-    @media (max-width: 767px) {
-      :root {
-        --page-pad:10px;
+    @media (max-width: 767px){
+      :root{
+        --pad:10px;
         --radius:16px;
       }
-
-      .hero-wrap {
-        align-items:flex-start;
+      .hero-wrap{
+        padding:var(--pad);
+        min-height:auto;
       }
-
-      .hero-card {
-        width:calc(100vw - (var(--page-pad) * 2));
-        aspect-ratio:1536 / 1024;
+      .hero-card{
+        width:calc(100vw - (var(--pad) * 2));
       }
-
-      .hero-card img {
+      .hero-card img{
         width:100%;
-        height:100%;
-        object-fit:contain;
-        object-position:center top;
+        height:auto;
       }
     }
   </style>
@@ -118,7 +153,7 @@
 <body>
   <main class="hero-wrap">
     <section class="hero-card" aria-label="EMIRA HOME ana sayfa görseli">
-      <img src="assets/emirahome-hero.png" alt="EMIRA HOME ana sayfa banner görseli" />
+      <img src="./assets/emirahome-hero.png" alt="EMIRA HOME ev dekorasyon ve ev güzelleştirme ana sayfa banner görseli" />
     </section>
   </main>
 </body>
