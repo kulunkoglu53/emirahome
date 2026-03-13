@@ -1,12 +1,13 @@
-EMIRA HOME Responsive Hero v8
+EMIRA HOME Responsive Hero v10
 
 Bu sürümde:
-- SEO meta title, description, keywords ve Open Graph alanları eklendi
-- Ev dekorasyon ve ev güzelleştirme odaklı içerik yerleştirildi
-- Görsel artık çerçeve içinde width:auto mantığıyla bozulmadan oturur
-- Tüm cihazlarda responsive çalışır
-- Hover zoom + yumuşak ışıldama korunur
-- Mouse sparkle yoktur
+- Resim ve çerçeve aynı anda birlikte boyutlanır
+- Çerçeve cihaz ekranına göre resmin oranını baz alarak hesaplanır
+- Desktop, tablet ve mobilde daha dengeli görünüm verir
+- Hover'da hafif zoom ve yumuşak ışıldama vardır
+- SEO alanları korunur
+
+Görsel oranı: 1536x1024
 
 Dosyalar:
 - index.html
