@@ -11,4 +11,4 @@ Görsel oranı: 1536x1024
 
 Dosyalar:
 - index.html
-- assets/emirahome-hero.png
+- emirahome-hero.png
